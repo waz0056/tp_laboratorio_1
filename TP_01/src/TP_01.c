@@ -80,9 +80,23 @@ int main(void)
 					{
 					retornoOpcion = calcularResultados(z, x, &debitoLatam, &creditoLatam, &bitcoinLatam, &kilometroLatam);
 
+					if (retornoOpcion == -1)
+					{
+						printf("Error");
+
+						opcion = 6;
+					}
+
 					retornoOpcion = calcularResultados(y, x, &debitoAerolineas, &creditoAerolineas, &bitcoinAerolineas, &kilometroAerolineas);
 
 					retornoOpcion = difPrecio(z, y, &diferenciaPrecio);
+
+					if (retornoOpcion == -1)
+					{
+						printf("Error");
+
+						opcion = 6;
+					}
 
 					flagOpcionTres = 1;
 
@@ -104,6 +118,13 @@ int main(void)
 						else
 						{
 							retornoOpcion = mostrarResultados(x, y, z, debitoAerolineas, debitoLatam, creditoAerolineas, creditoLatam, bitcoinAerolineas, bitcoinLatam, kilometroAerolineas, kilometroLatam, diferenciaPrecio);
+
+							if (retornoOpcion == -1)
+							{
+								printf("Error");
+
+								opcion = 6;
+							}
 						}
 					}
 					break;
@@ -120,7 +141,21 @@ int main(void)
 
 					retornoOpcion = difPrecio(z, y, &diferenciaPrecio);
 
+					if (retornoOpcion == -1)
+					{
+						printf("Error");
+
+						opcion = 6;
+					}
+
 					retornoOpcion = mostrarResultados(x, y, z, debitoAerolineas, debitoLatam, creditoAerolineas, creditoLatam, bitcoinAerolineas, bitcoinLatam, kilometroAerolineas, kilometroLatam, diferenciaPrecio);
+
+					if (retornoOpcion == -1)
+					{
+						printf("Error");
+
+						opcion = 6;
+					}
 
 					break;
 				case 6: //Salida del bucle y finalizacion del programa
